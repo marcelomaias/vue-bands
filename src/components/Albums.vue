@@ -1,18 +1,13 @@
 <template>
-    <ul>
-        <li v-for="(data, index) in albums" :key='index'>{{ data.album }}</li>
-    </ul>
+    <h4>{{ title }}</h4>
 </template>
+
 <script>
 export default {
-  name: "Albums",
   data() {
     return {
-      albums: [
-          { album: "Led One" }, 
-          { album: "Led Two" }
-        ]
-    };
+      title: 'This is the title'
+    }
   }
-};
+}
 </script>

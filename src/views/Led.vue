@@ -8,7 +8,7 @@
     <div>
       <h2>Discography</h2>
 
-      <Albums/>
+      <album-list></album-list>
 
       <ul class="discography">
         <li>
@@ -27,13 +27,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Albums from '@/components/Albums.vue'
-
 export default {
-  name: 'led',
   components: {
-    Albums
+    'album-list': Albums
   }
 }
 </script>
+
+
