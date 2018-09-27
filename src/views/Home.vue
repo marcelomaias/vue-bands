@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="page page-home">
+    <div class="container">
+      <HelloWorld msg="I am the HelloWorld component."/>
+    </div>
   </div>
 </template>
 
