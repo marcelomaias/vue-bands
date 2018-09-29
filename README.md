@@ -1,4 +1,4 @@
-# Vue-Bands.
+# Vue-Bands
 
 ### A simple SPA made with VueJS, with some simple CSS transitions.
 
