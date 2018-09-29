@@ -1,19 +1,39 @@
 <template>
-  <div id="app">
+  <div id="app" v-bind:class=" 
+    $route.path ==='/' ?  'page-home' :
+    $route.path ==='/led-zeppelin' ?  'page-led' : 
+    $route.path ==='/pink-floyd' ?  'page-pink' :
+    $route.path ==='/rush' ?  'page-rush' :
+    'others' ">
+
+    <div id="background-image"></div>
+    
     <section id="nav-area">
       <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/led-zeppelin">Led Zeppelin</router-link> |
-        <router-link to="/pink-floyd">Pink Floyd</router-link> |
-        <router-link to="/rush">Rush</router-link>
+        <ul>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/led-zeppelin"><img src="./assets/logo-led.svg" alt="Led Zeppelin"></router-link></li>
+          <li><router-link to="/pink-floyd"><img src="./assets/logo-pink.svg" alt="Pink Floyd"></router-link></li>
+          <li><router-link to="/rush"><img src="./assets/logo-rush.svg" alt="Rush"></router-link></li>
+        </ul>     
       </div>
     </section>
     
-    <transition name="page-anim" enter-active-class="page-in" leave-active-class="page-out">
+    <transition appear name="page" mode="out-in">
       <router-view/>
     </transition>
     
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+
+    };
+  }
+};
+</script>
 
 <style lang="scss" src="./scss/App.scss"></style>

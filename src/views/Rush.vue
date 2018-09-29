@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-rush">
+  <div class="page">
     <div class="container">
       <div>
       <h1>Rush</h1>

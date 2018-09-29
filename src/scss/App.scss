@@ -1,6 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,600|Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800');
 
 @import "normalize";
 @import "normalize_plus";
@@ -8,17 +8,18 @@
 @import "mixings";
 
 body {
-  background: #eee;
+  background: #000;
+  color: #fff;
   margin: 0;
   padding: 0;
-  font-family: 'Oswald', Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
 }
 h1, h2 {
-  font-family: 'Special Elite', cursive;
-  font-weight: 400;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 img {
   max-width: 100%;
@@ -27,12 +28,13 @@ img {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   position: relative;
+  width: 100%;
+  height: 100vh;
 }
 #nav-area {
   padding-top: 100px;
-  background: #fff;
+  // background: rgba(0, 0, 0, 0.5);
   text-align: center;
   > img {
     width: 80px;
@@ -40,25 +42,59 @@ img {
   }
 }
 #nav {
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #2c3e50;
-    border-bottom: 4px solid $red;
+  li {
     display: inline-block;
-    &.router-link-exact-active {
-      color: $red;
+    padding: 0 1rem;
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 800;
+      width: 160px;
+      color: #fff;
+      position: relative;
+      padding: 0 0 8px 0;
+      vertical-align: middle;
+      opacity: .5;
+      transition: opacity .25s;
+      &:hover {
+        opacity: 1;
+      }
+      &.router-link-exact-active {
+        color: $red;
+        opacity: 1;
+      }
+      &:after {
+        content: '';
+        background: $red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        transform: scaleX(0);
+        transition: all .25s;
+      }
+      &:hover:after, &.router-link-exact-active:after {
+        transform: scaleX(1);
+      }
+    }
+    &:last-child {
+      a {
+        width: 130px;
+      }
     }
   }
+
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   padding: 2rem 1rem;
   > div {
-    width: 50%;
+    // width: 50%;
     padding: 1rem;
   }
 }
@@ -73,8 +109,16 @@ ul.discography {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 2rem 1rem 0;
+  }
   img {
     width: 200px;
+    display: block;
+    margin: 0 auto 1rem auto;
+    @include box-shadow(1);
   }
 }
 .d-100 {
@@ -91,36 +135,73 @@ ul.discography {
 }
 
 .page {
-  position: absolute;
-  width: 100%;
-  // background: lightgreen;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
+  // position: absolute;
+  // width: 100%;
+  // left: 50%;
+  // transform: translate3d(-50%, 0, 0);
 }
-.page-in {
-  animation: page-in .25s;
+// .page-enter {
+//     opacity: 0;
+//     transform: translate3d(-40%, 0, 0);
+// }
+// .page-leave {
+//   opacity: 1;
+//   transform: translate3d(-50%, 0, 0);
+// }
+.page-enter-active {
+  animation: page-in .15s;
+  // animation-delay: 1s;
 }
-.page-out {
-  animation: page-out .25s;
+.page-leave-active {
+  animation: page-out .15s;
 }
 
 @keyframes page-in {
   0% {
     opacity: 0;
-    transform: translate3d(-50%, -250%, 0);
+    transform: translate3d(10%, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes page-out {
   0% {
     opacity: 1;
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
     opacity: 0;
-    transform: translate3d(-50%, 25%, 0);
+    transform: translate3d(10%, 0, 0);
+  }
+}
+
+#background-image {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all .5s;
+  opacity: .15;
+}
+.page-led {
+  #background-image {
+    background-image: url(../assets/bg-led.jpg);
+  }
+}
+.page-pink {
+  #background-image {
+    background-image: url(../assets/bg-pink.jpg);
+  }
+}
+.page-rush {
+  #background-image {
+    background-image: url(../assets/bg-rush.jpg);
   }
 }

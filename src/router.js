@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,17 +14,17 @@ export default new Router({
     },
     {
       path: '/led-zeppelin',
-      name: 'led',
+      name: 'page-led',
       component: () => import('./views/Led.vue')
     },
     {
       path: '/pink-floyd',
-      name: 'pink',
+      name: 'page-pink',
       component: () => import('./views/Pink.vue')
     },
     {
       path: '/rush',
-      name: 'rush',
+      name: 'page-rush',
       component: () => import('./views/Rush.vue')
     }
   ]

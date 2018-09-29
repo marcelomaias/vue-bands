@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-pink">
+  <div class="page">
     <div class="container">
       <div>
       <h1>Pink Floyd</h1>
