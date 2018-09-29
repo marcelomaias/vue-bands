@@ -1,4 +1,4 @@
-# Vue-Bands is a simple SPA made with Vue, with some simple CSS transitions.
+# Vue-Bands is a simple SPA made with VueJS, with some simple CSS transitions.
 
 ## Project setup
 ```
