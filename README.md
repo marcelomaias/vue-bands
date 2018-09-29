@@ -1,4 +1,4 @@
-# vue-router-sass
+# Vue-Bands is a simple SPA made with Vue, with some simple CSS transitions.
 
 ## Project setup
 ```
