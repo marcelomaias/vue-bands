@@ -2,14 +2,10 @@
   <div class="page">
     <div class="container">
       <div>
-      <h1>Led Zeppelin</h1>
-      <p>Led Zeppelin were an English rock band formed in London in 1968. The group consisted of guitarist Jimmy Page, singer Robert Plant, bassist and keyboardist John Paul Jones, and drummer John Bonham. The band's heavy, guitar-driven sound has led them to be cited as one of the progenitors of heavy metal. Their style drew from a wide variety of influences, including blues, psychedelia, and folk music.</p>
+      <p><span class="name">Led Zeppelin</span> were an English rock band formed in London in 1968. The group consisted of guitarist <strong>Jimmy Page</strong>, singer <strong>Robert Plant</strong>, bassist and keyboardist <strong>John Paul Jones</strong>, and drummer <strong>John Bonham</strong>. The band's heavy, guitar-driven sound has led them to be cited as <strong>one of the progenitors of heavy metal</strong>. Their style drew from a wide variety of influences, including blues, psychedelia, and folk music.</p>
     </div>
     <div>
-    
-
-    <album-list :albums="albums"></album-list>
-
+      <album-list :albums="albums"></album-list>
     </div>
     </div>
   </div>
